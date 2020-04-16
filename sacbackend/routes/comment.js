@@ -36,3 +36,5 @@ router.put('/update/:commentId', (req,res) => {
             return res.status(200).send(comment);
         })
 });
+
+module.exports = router;

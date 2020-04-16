@@ -35,3 +35,5 @@ router.put('/update/:postImageId', (req,res) => {
             return res.status(200).send(postImage);
         })
 });
+
+module.exports = PostImage;
