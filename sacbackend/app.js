@@ -74,6 +74,9 @@ const storage = new GridFSStorage({
 });
 const upload = multer({ storage });
 
+app.post('/upload', upload.single('file'),(req, res) => {
+  res.json({file: req.file});
+});
 
 //Init server
 const port = process.env.PORT || 5000;

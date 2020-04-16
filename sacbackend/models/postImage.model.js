@@ -9,6 +9,7 @@ const postImageSchema = new Schema({
     PostImage3:{type: String},
     PostImage4:{type: String},
     PostImage5:{type: String},
+    PostImage6:{type: String},
 });
 
 const PostImage = mongoose.model("PostImage", postImageSchema);
