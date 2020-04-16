@@ -19,9 +19,18 @@ router.get('/', function(req, res) {
         .catch(err => res.status(400).json('Eroor:' + err));
 });
 
+//api/posts/findbyPostId		Get		Post:userId
+router.get('/:postId', function(req, res) {
+    Post.findById(req.params.postId, (err, posts) => {
+        if (err) return handleError(err);
+        console.log(posts);
+        return res.status(200).send(posts);
+    })
+});
+
 
 //api/posts/findbyUserId		Get		Post:userId
-router.get('/findbyuser/:userId', function(req, res) {
+router.get('/findbyuserid/:userId', function(req, res) {
     Post.find({ authorId: req.params.userId}, (err, posts) => {
         if (err) return handleError(err);
         console.log(posts);
