@@ -4,6 +4,7 @@ import PostInforComponent from "./PostInfor.component";
 import PostDetailComponent from "./PostDetail.component"
 import PostImageComponent from "./PostImage.component";
 import axios from 'axios';
+import SubHeaderComponent from "../SubHeader.component";
 
 class SinglePostComponent extends React.Component{
     constructor() {
@@ -27,7 +28,9 @@ class SinglePostComponent extends React.Component{
 
     render() {
         return (
-            <div className={"container"}>
+            <div>
+                <SubHeaderComponent />
+                <div className="container">
             <div className="row">
                 <div className="col-lg-9 col-12">
                         <div className="wn__single__product">
@@ -53,6 +56,7 @@ class SinglePostComponent extends React.Component{
                     <SiderbarComponent />
                 </div>
             </div>
+                </div>
             </div>
         )
     }

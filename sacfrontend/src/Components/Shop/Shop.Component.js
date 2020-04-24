@@ -2,11 +2,14 @@ import React from "react";
 import SiderbarComponent from "../Siderbar.component";
 import PostsGridComponent from "./PostsGrid.component";
 import axios from "axios";
+import SubHeaderComponent from "../SubHeader.component";
 
 class ShopComponent extends React.Component{
 
     render() {
         return (
+            <div>
+            <SubHeaderComponent />
                 <div className="album py-5 bg-light">
                     <div className="container">
                         <div className="row">
@@ -20,6 +23,7 @@ class ShopComponent extends React.Component{
                         </div>
                     </div>
                 </div>
+            </div>
         )
     }
 

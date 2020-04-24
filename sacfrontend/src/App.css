@@ -13,6 +13,24 @@
   }
 }
 
+.loginbutton{
+  padding: 0;
+  margin-left: 15px;
+  border: none;
+  background: none;
+}
+
+.landingImg{
+  width: 100%;
+  display: block;
+
+}
+
+.landingImgContianer{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 40px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

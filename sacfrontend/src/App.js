@@ -8,13 +8,14 @@ import ShopComponent from "./Components/Shop/Shop.Component";
 import SubHeaderComponent from "./Components/SubHeader.component";
 import FooterComponent from "./Components/Footer.component";
 import SinglePostComponent from "./Components/SingleProduct/SinglePost.component";
+import LandingComponent from "./Components/Landing.component";
 
 function App() {
   return (
     <Router>
         <div>
       <NavbarComponent />
-      <SubHeaderComponent />
+      <Route path={"/"} exact component= {LandingComponent}/>
       <Route path={"/Shop"} exact component = {ShopComponent}/>
       <Route path={"/SinglePost"} exact component = {SinglePostComponent}/>
       <FooterComponent />
