@@ -8,8 +8,6 @@ class PostsGridComponent extends React.Component{
         this.state = {
             posts: []
         }
-
-        this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount() {
@@ -17,22 +15,17 @@ class PostsGridComponent extends React.Component{
             .then(res => {
                 console.log(res.data);
                 this.setState({
-                    posts: res.data
+                    posts: this.state.posts.concat(res.data)
                 })
 
             })
     }
 
 
-    handleChange(p) {
-        window.location ="/SinglePost";
-    }
-
-
     render() {
         return (
             <div className="row">
-                {this.state.posts.map(p => <PostComponent key={p._id} post={p} handleChange={this.handleChange}/>)}
+                {this.state.posts.map(p => <PostComponent key={p._id} post={p}/>)}
             </div>
         )
     }

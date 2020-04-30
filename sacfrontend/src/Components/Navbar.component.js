@@ -15,7 +15,7 @@ class NavbarComponent extends React.Component{
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <Link className="nav-item nav-link" to="Shop">Shop</Link>
-                        <Link className="nav-item nav-link" to="SinglePost">SinglePost</Link>
+                        <Link className="nav-item nav-link" to="CreatePost">CreatePost</Link>
                     </div>
                 </div>
 

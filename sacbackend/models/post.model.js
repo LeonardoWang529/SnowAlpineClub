@@ -10,8 +10,8 @@ const postSchema = new Schema({
     postCategories:{type: String, required: true},
     postContent:{type: String, required: true},
     postTime:{type: Date},
-    postImageId:{type: Number, required: true},
-    saleBuyFlag:{type: Boolean, required: true},
+    postImageId:{type: String, required: true},
+    saleBuyFlag:{type: String, required: true},
 },{
     timestamp: true,
 });

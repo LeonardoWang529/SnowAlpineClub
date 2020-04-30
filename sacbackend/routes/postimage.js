@@ -1,9 +1,21 @@
 const router = require('express').Router();
-let PostImage = require('../models/postImage.model');
+let Postimage = require('../models/postimage.model');
+
+
+
+//api/posts/getAll	GET
+router.get('/', function(req, res) {
+    Postimage.find()
+        .then(posts => {
+            res.json(posts);
+            console.log(posts);
+        })
+        .catch(err => res.status(400).json('Eroor:' + err));
+});
 
 //api/postImage/getPostImage		Get
 router.get('/:postImageId', (req,res) => {
-    PostImage.findbyId(req.params.postImageId,(err,postImage)=> {
+    Postimage.findById(req.params.postImageId,(err, postImage)=> {
         if (err) return handleError(err);
         return res.status(200).send(postImage);
     });
@@ -11,7 +23,7 @@ router.get('/:postImageId', (req,res) => {
 
 //api/postImage/create		Post		Comment
 router.post('/create', (req,res) => {
-    const newPostImage = new newPostImage(req.body);
+    const newPostImage = new Postimage(req.body);
     newPostImage.save(err => {
         if (err) return res.status(500).send(err);
         return res.status(200).send(newPostImage);
@@ -20,7 +32,7 @@ router.post('/create', (req,res) => {
 
 //api/postImage/deleteAll		Delete		Comment:id
 router.delete('/delete/:postImageId', (req,res) => {
-    PostImage.findByIdAndRemove(req.params.postImageId,
+    Postimage.findByIdAndRemove(req.params.postImageId,
         (err)=>{
             if (err) return res.status(500).send(err);
             return res.status(200).send('Images removed!');
@@ -36,4 +48,4 @@ router.put('/update/:postImageId', (req,res) => {
         })
 });
 
-module.exports = PostImage;
+module.exports = router;

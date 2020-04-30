@@ -4,7 +4,7 @@ class FooterComponent extends React.Component{
 
     render() {
         return (
-            <footer className="text-muted">
+            <footer className="text-muted" style={{margin:"50px"}}>
                 <div className="container">
                     <p className="float-right">
                         <a href="#">Back to top</a>

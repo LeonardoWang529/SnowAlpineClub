@@ -61,19 +61,7 @@ router.get('/findbycategory/:category', function(req, res) {
 
 //api/posts/create	POST
 router.post('/add', (req, res) => {
-
-/*    Post.create(newPost,(err) => {
-        if (err) return handleError(err);
-        console.log(posts);
-        return res.status(200).send(posts);
-    });*/
-
-/*    newPost.save()
-        .then(() => res.json('Post added!'))
-        .catch(err => res.status(400).json('Error' + err));*/
-
     const newPost = new Post(req.body);
-
     newPost.save( (err) => {
         if (err) return res.status(500).send(err);
         return res.status(200).send(newPost);
