@@ -3,14 +3,16 @@ let Comment = require('../models/comment.model');
 
 //api/comment/getComments		Get
 router.get('/:postId', (req,res) => {
+
     Comment.find({postId: req.params.postId},(err,comments)=> {
-        if (err) return handleError(err);
+        if (err) return res.status(500).send(err);
         return res.status(200).send(comments);
     });
 });
 
 //api/comment/create		Post		Comment
 router.post('/create', (req,res) => {
+    console.log(req.body);
     const newComment = new Comment(req.body);
     newComment.save(err => {
         if (err) return res.status(500).send(err);

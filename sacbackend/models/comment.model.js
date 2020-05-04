@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    postId:{type: Number, reuniqued:true},
-    authoridId:{type: Number, reuniqued:true},
+    postId:{type: String, reuniqued:true},
     commentTime:{type: Date, reuniqued:true},
     commentContent:{type: String, reuniqued:true},
 },{

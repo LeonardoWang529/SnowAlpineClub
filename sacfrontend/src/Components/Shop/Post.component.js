@@ -38,6 +38,7 @@ class PostComponent extends React.Component {
                         <p className="card-text" style={{textAlign: "center"}}>$ {this.props.post.price}</p>
                     </div>
             </div>
+                <br />
             </Link>
             /*</div>*/
         )

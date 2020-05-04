@@ -3,10 +3,32 @@ import axios from "axios";
 import PostComponent from "./Post.component";
 
 class PostsGridComponent extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: []
+    state = {
+        posts: [],
+    }
+
+    setCat = (value) => {
+        if(value === ""){
+            axios.get('http://localhost:5000/posts/')
+                .then(res => {
+                    console.log(res.data);
+                    this.setState({
+                        posts: this.state.posts.concat(res.data)
+                    })
+
+                })
+        }else {
+
+            this.setState({cat: value}, () => {
+                axios.get('http://localhost:5000/posts/findbycategory/' + value)
+                    .then(res => {
+                        console.log(res.data);
+                        this.setState({
+                            posts: this.state.posts.concat(res.data)
+                        })
+
+                    })
+            });
         }
     }
 
@@ -23,9 +45,12 @@ class PostsGridComponent extends React.Component{
 
 
     render() {
+
         return (
             <div className="row">
-                {this.state.posts.map(p => <PostComponent key={p._id} post={p}/>)}
+                {this.state.posts.map(p => this.props.cate === "all"?
+                        <PostComponent key={p._id} post={p}/> : p.postCategories === this.props.cate? <PostComponent key={p._id} post={p}/>:null
+                )}
             </div>
         )
     }

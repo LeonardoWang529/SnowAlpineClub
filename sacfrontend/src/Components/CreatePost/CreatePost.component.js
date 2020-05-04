@@ -203,7 +203,7 @@ class CreatePostComponent extends React.Component{
                             </Container>
 
                             <Button variant="primary" type="submit">
-                                Submit
+                                Just Gonna Send It
                             </Button>
 
                         </Form>

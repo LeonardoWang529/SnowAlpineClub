@@ -1,10 +1,11 @@
 import React from "react";
-import SiderbarComponent from "../Siderbar.component";
+import SiderbarComponent from "../SiderBar/Siderbar.component";
 import PostInforComponent from "./PostInfor.component";
 import PostDetailComponent from "./PostDetail.component"
 import PostImageComponent from "./PostImage.component";
 import axios from 'axios';
 import SubHeaderComponent from "../SubHeader.component";
+import CommentListComponent from "../Comments/CommentList.component";
 
 class SinglePostComponent extends React.Component{
 
@@ -29,10 +30,11 @@ class SinglePostComponent extends React.Component{
 
 
                     </div>
-                    <div className="product__info__detailed">
+                    {/*<div className="product__info__detailed">
                         <PostDetailComponent post={this.props.location.state.post}/>
-                    </div>
+                    </div>*/}
                     {/*<RelatedPostComponent />*/}
+                    <CommentListComponent post={this.props.location.state.post}/>
 
                 </div>
 
