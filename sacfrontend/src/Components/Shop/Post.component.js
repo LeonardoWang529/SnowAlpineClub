@@ -7,10 +7,10 @@ class PostComponent extends React.Component {
         source: null
     }
 
-    componentDidMount = () => {
+    componentDidMount(){
         axios.get('http://localhost:5000/postimages/'+this.props.post.postImageId)
             .then(res => {
-                axios.get("http://localhost:5000/uploadPostImage/image/" + res.data.PostImage1,
+                axios.get("http://localhost:5000/uploadPostImage/image/" + res.data.postImage1,
                     { responseType: 'arraybuffer' },)
                     .then(response => {
                         const base64 = btoa(
@@ -30,9 +30,10 @@ class PostComponent extends React.Component {
             /*<div className="col-md-4" onClick={()=><Redirect to={{pathname: '/SinglePost', state: { post: this.props.post }}}/>}>*/
             <Link className="col-md-4" to={{pathname: '/SinglePost', state: { post: this.props.post}}}>
             {/*<div className="col-md-4" onClick={()=>this.props.handleChange(this.props.post)}>*/}
-            <div className="card" style={{width:"100%"}}>
+            <div className="card" style={{width:"100%", textAlign: "center"}}>
                {/* <img src="../../logo.svg" className="card-img-top" alt="..."/>*/}
-                <img className="card-img-top" style={{ width:"100%",height:200}} src= {this.state.source}/>
+                <img className="card-img-top" style={{width:"50%", display: "block", marginLeft: "auto",
+                    marginRight: "auto"}} src= {this.state.source}/>
                     <div className="card-body">
                         <h5 className="card-title" style={{textAlign: "center"}}>{this.props.post.postTitle}</h5>
                         <p className="card-text" style={{textAlign: "center"}}>$ {this.props.post.price}</p>

@@ -54,7 +54,7 @@ const upload = multer({
 //upload single file should be called from user create.
 router.post("/upload", upload.single("image"), (req,res) => {
     //return res.file.filename;
-    const newPostImage = new PostImage({PostImage1:req.file.filename});
+    const newPostImage = new PostImage({postImage1:req.file.filename});
     newPostImage.save(err => {
         if (err) {return res.status(500).send(err)};
         return res.status(200).send(newPostImage);

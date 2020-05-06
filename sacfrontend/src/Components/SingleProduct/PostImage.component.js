@@ -12,7 +12,7 @@ class PostImageComponent extends React.Component{
     componentDidMount = () => {
         axios.get('http://localhost:5000/postimages/'+this.props.post.postImageId)
             .then(res => {
-                axios.get("http://localhost:5000/uploadPostImage/image/" + res.data.PostImage1,
+                axios.get("http://localhost:5000/uploadPostImage/image/" + res.data.postImage1,
                     { responseType: 'arraybuffer' },)
                     .then(response => {
                         const base64 = btoa(
@@ -30,7 +30,8 @@ class PostImageComponent extends React.Component{
 
     render() {
         return (
-            <img className="card-img-top" style={{ width:"100%",height:200}} src= {this.state.source}/>
+            <img className="card-img-top" style={{width:"50%", display: "block", marginLeft: "auto",
+                marginRight: "auto"}} src= {this.state.source}/>
         )
     }
 }

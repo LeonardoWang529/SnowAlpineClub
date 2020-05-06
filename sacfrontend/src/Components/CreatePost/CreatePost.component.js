@@ -202,7 +202,7 @@ class CreatePostComponent extends React.Component{
                                 </Row>
                             </Container>
 
-                            <Button variant="primary" type="submit">
+                            <Button className={'postSubmit'} variant="primary" type="submit">
                                 Just Gonna Send It
                             </Button>
 

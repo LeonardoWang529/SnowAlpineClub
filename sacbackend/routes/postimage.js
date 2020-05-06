@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
 
 //api/postImage/getPostImage		Get
 router.get('/:postImageId', (req,res) => {
+    console.log(req.params.postImageId);
     Postimage.findById(req.params.postImageId,(err, postImage)=> {
         if (err) return handleError(err);
         return res.status(200).send(postImage);

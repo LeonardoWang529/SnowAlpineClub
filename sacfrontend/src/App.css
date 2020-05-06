@@ -46,6 +46,18 @@
   color: #61dafb;
 }
 
+.siderbarItem{
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+}
+
+.postSubmit{
+  float : right;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
