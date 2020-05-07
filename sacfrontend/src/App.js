@@ -13,7 +13,8 @@ import CreatePostComponent from './Components/CreatePost/CreatePost.component';
 
 import Register from './Components/auth/Register';
 import Login from './Components/auth/Login';
-import Authentication from './Components/Authentication';
+import LoginBootstrap from './Components/LoginBootstrap';
+import RegisterBootstrap from './Components/RegisterBootstrap';
 import AccountSummary from './Components/user/AccountSummary';
 import EditProfile from './Components/user/EditProfile';
 import ChangePassword from './Components/user/ChangePassword';
@@ -29,7 +30,8 @@ function App() {
         <Route path={'/CreatePost'} exact component={CreatePostComponent} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/authpage' component={Authentication} />
+        {/* <Route exact path='/login' component={LoginBootstrap} />
+        <Route exact path='/register' component={RegisterBootstrap} /> */}
         <Switch>
           <Route exact path='/account/summary' component={AccountSummary} />
           <Route exact path='/account/edit' component={EditProfile} />
