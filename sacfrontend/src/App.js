@@ -28,10 +28,10 @@ function App() {
         <Route path={'/Shop'} exact component={ShopComponent} />
         <Route path={'/SinglePost'} exact component={SinglePostComponent} />
         <Route path={'/CreatePost'} exact component={CreatePostComponent} />
-        <Route exact path='/register' component={Register} />
-        <Route exact path='/login' component={Login} />
-        {/* <Route exact path='/login' component={LoginBootstrap} />
-        <Route exact path='/register' component={RegisterBootstrap} /> */}
+        {/* <Route exact path='/register' component={Register} />
+        <Route exact path='/login' component={Login} /> */}
+        <Route exact path='/login' component={LoginBootstrap} />
+        <Route exact path='/register' component={RegisterBootstrap} />
         <Switch>
           <Route exact path='/account/summary' component={AccountSummary} />
           <Route exact path='/account/edit' component={EditProfile} />
