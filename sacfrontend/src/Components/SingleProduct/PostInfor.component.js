@@ -1,4 +1,55 @@
 import React from "react";
+import {
+    FacebookShareCount,
+    OKShareCount,
+    PinterestShareCount,
+    RedditShareCount,
+    TumblrShareCount,
+    VKShareCount,
+} from "react-share";
+
+import {
+    EmailIcon,
+    FacebookIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    VKIcon,
+    WeiboIcon,
+    WhatsappIcon,
+    WorkplaceIcon,
+} from "react-share";
+
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
+} from "react-share";
 
 class PostInforComponent extends React.Component{
 
@@ -18,30 +69,39 @@ class PostInforComponent extends React.Component{
                     <p>Categories: {this.props.post.postCategories}</p>
                 </div>
                 <div className="product-share">
-                    <ul>
-                        <li className="categories-title">Share :</li>
-                        <li>
-                            <a href="#">
-                                <i className="icon-social-twitter icons"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i className="icon-social-tumblr icons"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i className="icon-social-facebook icons"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i className="icon-social-linkedin icons"></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <FacebookShareButton
+                        url={"www.facebook.com"}
+                        quote={"facebook"}
+                        className="Demo__some-network__share-button"
+                    >
+                        <FacebookIcon style={{margin: "5"}} size={32} round />
+                    </FacebookShareButton>
+
+                    <EmailShareButton
+                        url={"www.facebook.com"}
+                        quote={"facebook"}
+                        className="Demo__some-network__share-button"
+                    >
+                        <EmailIcon style={{margin: "5"}} size={32} round />
+                    </EmailShareButton>
+
+                    <PinterestShareButton
+                        url={"www.facebook.com"}
+                        quote={"facebook"}
+                        className="Demo__some-network__share-button"
+                    >
+                        <PinterestIcon style={{margin: "5"}} size={32} round />
+                    </PinterestShareButton>
+
+                    <EmailShareButton
+                        url={"www.facebook.com"}
+                        quote={"facebook"}
+                        className="Demo__some-network__share-button"
+                    >
+                        <EmailIcon style={{margin: "5"}} size={32} round />
+                    </EmailShareButton>
                 </div>
+
             </div>
         )
     }
