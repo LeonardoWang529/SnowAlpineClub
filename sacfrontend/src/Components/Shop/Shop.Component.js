@@ -10,7 +10,7 @@ class ShopComponent extends React.Component{
     }
 
     componentDidMount(){
-        //this.props.location.state.key
+        //this.props.location.state.categ
 
         if (localStorage && localStorage.getItem('cate')) {
             let c = localStorage.getItem('cate');
