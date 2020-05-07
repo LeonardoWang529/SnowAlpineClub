@@ -13,20 +13,19 @@
   }
 }
 
-.loginbutton{
+.loginbutton {
   padding: 0;
   margin-left: 15px;
   border: none;
   background: none;
 }
 
-.landingImg{
+.landingImg {
   width: 100%;
   display: block;
-
 }
 
-.landingImgContianer{
+.landingImgContianer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 40px;
 }
@@ -46,16 +45,16 @@
   color: #61dafb;
 }
 
-.siderbarItem{
-  background:none;
-  border:none;
-  margin:0;
-  padding:0;
+.siderbarItem {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
 }
 
-.postSubmit{
-  float : right;
+.postSubmit {
+  float: right;
 }
 
 @keyframes App-logo-spin {
@@ -65,4 +64,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* login */
+
+.container-login {
+  height: 100%;
+  align-content: center;
+}
+
+.card-login {
+  height: 370px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-register {
+  height: 450px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-header h3 {
+  color: white;
+}
+
+.login_btn {
+  color: black;
+  background-color: #4c8dee;
+  width: 100px;
+}
+
+.login_btn:hover {
+  color: black;
+  background-color: white;
 }
