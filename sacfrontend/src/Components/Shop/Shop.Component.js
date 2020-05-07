@@ -9,6 +9,18 @@ class ShopComponent extends React.Component{
         cat: "all"
     }
 
+    componentDidMount(){
+        //this.props.location.state.key
+
+        if (localStorage && localStorage.getItem('cate')) {
+            let c = localStorage.getItem('cate');
+            if(c!=="") {
+                this.setState({cat: c})
+                localStorage.setItem('cate', "");
+            }
+        }
+    }
+
     handleCatMove =(c) => {
         this.setState({cat:c})
     }
