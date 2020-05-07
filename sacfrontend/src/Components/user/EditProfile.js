@@ -6,6 +6,7 @@ import Avatar from './Avatar';
 import AuthService from '../auth/authService';
 import axios from 'axios';
 import setAuthToken from '../../utils/setAuthToken';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 class EditProfile extends Component {
   constructor() {
@@ -84,76 +85,57 @@ class EditProfile extends Component {
 
             <div className='col m8 l9 '>
               <h3>Edit My Information</h3>
-              <form
-                className='col s12'
-                onSubmit={this.onSubmit.bind(this)}
-                autoComplete='off'>
-                <div className='row'>
-                  <div className='input-field col s6'>
-                    <label htmlFor='email'>Email</label>
-                    <br />
-                    <input
-                      onChange={this.onChange}
-                      id='email'
-                      type='text'
-                      value={user.email}
-                      placeholder={user.email}
-                      className='validate'
-                    />
-                  </div>
-
-                  <div className='input-field col s6'>
-                    <label htmlFor='firstname'>Firstname</label>
-                    <br />
-                    <input
-                      onChange={this.onChange}
-                      id='firstname'
+              <Form onSubmit={this.onSubmit.bind(this)}>
+                <Form.Row>
+                  <Form.Group as={Col} controlId='firstname'>
+                    <Form.Label>Firstname</Form.Label>
+                    <Form.Control
                       type='text'
                       placeholder={user.firstname}
-                      className='validate'
-                    />
-                  </div>
-                  <div className='input-field col s6'>
-                    <label htmlFor='lastname'>Lastname</label>
-                    <br />
-                    <input
+                      name={'firstname'}
+                      // value={this.state.}
                       onChange={this.onChange}
-                      id='lastname'
+                      style={{ marginRight: 100 }}
+                    />
+                  </Form.Group>
+                  <Form.Group as={Col} controlId='lastname'>
+                    <Form.Label>Lastname</Form.Label>
+                    <Form.Control
                       type='text'
-                      placeholder={user.lastname}
-                      className='validate'
-                    />
-                  </div>
-                </div>
-
-                <div className='row'>
-                  <div className='input-field col s12'>
-                    <label htmlFor='address'> Address</label>
-                    <br />
-                    <textarea
+                      placeholder='user.lastname'
+                      name={'lastname'}
+                      // value={this.state.postTitle}
                       onChange={this.onChange}
-                      id='address'
+                      style={{ marginRight: 100 }}
+                    />
+                  </Form.Group>
+                </Form.Row>
+
+                <Form.Row>
+                  <Form.Group as={Col} controlId='address'>
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control
+                      type='text'
                       placeholder={user.address}
-                      className='materialize-textarea'></textarea>
-                  </div>
-                </div>
-
-                <div className='row'>
-                  <Avatar />
-                </div>
-
-                <button
-                  style={{
-                    width: '150px',
-                    borderRadius: '3px',
-                    letterSpacing: '1.5px',
-                    marginTop: '1rem',
-                  }}
-                  type='submit'
-                  className='btn btn-large waves-effect waves-light hoverable blue accent-3'>
+                      name={'address'}
+                      // value={this.state.}
+                      onChange={this.onChange}
+                      style={{ marginRight: 100 }}
+                    />
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group>
+                    <Avatar />
+                  </Form.Group>
+                </Form.Row>
+                <Button
+                  className={'profileSubmit'}
+                  variant='primary'
+                  type='submit'>
                   OK
-                </button>
-              </form>
+                </Button>
+              </Form>
             </div>
           </div>
         </div>

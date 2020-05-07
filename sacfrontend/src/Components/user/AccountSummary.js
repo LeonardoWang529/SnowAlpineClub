@@ -37,7 +37,7 @@ class AccountSummary extends Component {
     localStorage.removeItem('jwtToken');
     // Remove auth header for future requests
     setAuthToken(false);
-    this.props.history.push('/');
+    this.props.history.push('/Shop');
   };
 
   render() {
@@ -85,7 +85,7 @@ class AccountSummary extends Component {
                   marginTop: '1rem',
                 }}
                 onClick={this.onLogoutClick}
-                className='btn btn-large waves-effect waves-light hoverable blue accent-3'>
+                className='btn btn-primary waves-effect waves-light hoverable blue accent-3'>
                 Logout
               </button>
             </div>
