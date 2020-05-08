@@ -1,0 +1,36 @@
+{
+  "title": "滑雪商城",
+  "nav": {
+    "shop": "商场",
+    "CreatePost": "创建",
+    "Action": "中文",
+    "Another": "英文",
+    "Search": "搜索",
+    "Dropdown": "语言"
+  },
+  "foot": {
+    "back": "回到顶端",
+    "Thank": "非常感谢光临我们的网站",
+    "Connect": "您可以通过电子邮件联系我们",
+    "visit": "或者光临我们在三藩的店址."
+  },
+  "side": {
+    "Categories": "分类"
+  },
+  "create": {
+    "cMyPost": "创建",
+    "Title": "题目",
+    "buy": "买",
+    "sale": "卖",
+    "price": "价格",
+    "Tag": "标签",
+    "Category": "种类",
+    "Description": "介绍",
+    "send": "公开",
+    "Entertitle": "输入标题",
+    "Enterprice": "输入价格",
+    "EnterTag": "输入标签",
+    "EnterDescription": "输入描述",
+    "imageupload": "上传图片"
+  }
+}

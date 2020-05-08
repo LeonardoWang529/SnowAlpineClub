@@ -1,9 +1,36 @@
 import React from "react";
 import SiderBarCategoriesComponent from "./SiderBarCategories.Component";
+import {
+    setTranslations,
+    setDefaultLanguage,
+    setLanguageCookie,
+    setLanguage,
+    translate,
+} from 'react-switch-lang';
+import en from '../../en.json';
+import ch from '../../ch.json';
+
+// Do this two lines only when setting up the application
+setTranslations({ en, ch });
+setDefaultLanguage('en');
+
+// If you want to remember selected language
+setLanguageCookie();
 
 class SiderbarComponent extends React.Component{
     state = {
         categories : ["all","Snowboard", "Snowboots", "SnowClothes", "Ski", "Skiboots"]
+    }
+
+    componentDidMount(){
+        //this.props.location.state.categ
+
+        if (localStorage && localStorage.getItem('lang')) {
+            let c = localStorage.getItem('lang');
+            if(c!=="") {
+                setLanguage(c);
+            }
+        }
     }
 
     handleCategoryClick = e => {
@@ -11,10 +38,12 @@ class SiderbarComponent extends React.Component{
     }
 
     render() {
+        const { t } = this.props;
         return (
             <div className="shop__sidebar">
                 <aside className="wedget__categories poroduct--cat">
-                    <h3 className="wedget__title">Product Categories</h3>
+                    <h3 className="wedget__title">{t('side.Categories')}</h3>
+                    <hr style={{height:"1px", borderTop:"1px solid #E30425"}} />
                     <ul>
                     {this.state.categories.map((category) =>
                         <SiderBarCategoriesComponent clickhandle={this.handleCategoryClick} catname={category}/>
@@ -87,4 +116,4 @@ class SiderbarComponent extends React.Component{
     }
 }
 
-export default SiderbarComponent;
+export default translate(SiderbarComponent);
