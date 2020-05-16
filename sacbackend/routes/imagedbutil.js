@@ -14,7 +14,7 @@ const GridFsStorage = require("multer-gridfs-storage");
 const mongoose = require("mongoose");
 
 //Mongo setup
-const uri = process.env.ATLAS_URI;
+const uri = process.env.LEO_ATLAS_URI;
 //Init gfs
 let gfs;
 

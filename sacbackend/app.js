@@ -38,7 +38,7 @@ app.use('/postimages', postImageRouter);
 app.use('/uploadPostImage', imagedbRouter);
 
 //Mongo setup
-const uri = process.env.ATLAS_URI;
+const uri = process.env.LEO_ATLAS_URI;
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,

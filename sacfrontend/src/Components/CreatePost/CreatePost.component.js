@@ -87,7 +87,7 @@ class CreatePostComponent extends React.Component {
         this.setState({ postImageId: res.data._id }, () => {
           //create new post
           let newPost = {
-            authorId: 1,
+            authorId: localStorage.getItem('localUserId'),
             price: this.state.price,
             postTitle: this.state.postTitle,
             postTag: this.state.postTag,

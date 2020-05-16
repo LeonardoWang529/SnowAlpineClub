@@ -59,6 +59,7 @@ class LoginBootstrap extends React.Component {
         // Set token to localStorage
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
+        console.log(res.data.userId);
         // Set token to Auth header
         setAuthToken(token);
         this.props.history.push('/account/summary');
