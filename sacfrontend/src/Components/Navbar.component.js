@@ -1,59 +1,77 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import loginImg from '../images/icons/icon_setting.png';
+import React from "react";
+import {Link} from "react-router-dom";
+import loginImg from "../images/icons/icon_setting.png"
+import {Button, Form, FormControl, Nav, Navbar, NavDropdown, NavLink} from "react-bootstrap";
+import PropTypes from 'prop-types';
+import {
+    setTranslations,
+    setDefaultLanguage,
+    setLanguageCookie,
+    setLanguage,
+    translate,
+} from 'react-switch-lang';
+import en from '../en.json';
+import ch from '../ch.json';
 
-class NavbarComponent extends React.Component {
-  render() {
-    return (
-      <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-        <a className='navbar-brand' href='/'>
-          SnowAlpineCompany
-        </a>
-        <button
-          className='navbar-toggler'
-          type='button'
-          data-toggle='collapse'
-          data-target='#navbarNavAltMarkup'
-          aria-controls='navbarNavAltMarkup'
-          aria-expanded='false'
-          aria-label='Toggle navigation'>
-          <span className='navbar-toggler-icon'></span>
-        </button>
-        <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
-          <div className='navbar-nav'>
-            <Link className='nav-item nav-link' to='/Shop'>
-              Shop
-            </Link>
-            <Link className='nav-item nav-link' to='/CreatePost'>
-              CreatePost
-            </Link>
-          </div>
-        </div>
 
-        <form className='form-inline my-2 my-lg-0'>
-          <input
-            className='form-control mr-sm-2'
-            type='search'
-            placeholder='Search'
-            aria-label='Search'
-          />
-          <button
-            className='btn btn-outline-success my-2 my-sm-0'
-            type='submit'>
-            Search
-          </button>
-        </form>
+// Do this two lines only when setting up the application
+setTranslations({ en, ch });
+setDefaultLanguage('en');
 
-        <div className='nav-item'>
-          <Link className='nav-item nav-link' to='/account/summary'>
-            <button className={'loginbutton'}>
-              <img src={loginImg} alt='login image' />
-            </button>
-          </Link>
-        </div>
-      </nav>
-    );
-  }
+// If you want to remember selected language
+setLanguageCookie();
+
+class NavbarComponent extends React.Component{
+
+    handleSetLanguage = (key) => () => {
+        localStorage.setItem('lang', key);
+        setLanguage(key);
+    };
+
+    render() {
+        const { t } = this.props;
+        return(
+            <Navbar bg="light" expand="lg">
+                <Navbar.Brand href="/">{t('title')}</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Link className="nav-item nav-link" to="Shop">{t('nav.shop')}</Link>
+                        <Link className="nav-item nav-link" to="CreatePost">{t('nav.CreatePost')}</Link>
+                        <NavDropdown title={t('nav.Dropdown')} id="basic-nav-dropdown">
+                            <NavDropdown.Item onClick={this.handleSetLanguage('ch')}>{t('nav.Action')}</NavDropdown.Item>
+                            <NavDropdown.Item onClick={this.handleSetLanguage('en')}>{t('nav.Another')}</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <form className='form-inline my-2 my-lg-0'>
+                        <input
+                            className='form-control mr-sm-2'
+                            type='search'
+                            placeholder={t('nav.Search')}
+                            aria-label='Search'
+                        />
+                        <button
+                            className='btn btn-outline-success my-2 my-sm-0'
+                            type='submit'>
+                            {t('nav.Search')}
+                        </button>
+                    </form>
+
+                    <div className='nav-item'>
+                        <Link className='nav-item nav-link' to='/account/summary'>
+                            <button className={'loginbutton'}>
+                                <img src={loginImg} alt='login image' />
+                            </button>
+                        </Link>
+                    </div>
+                </Navbar.Collapse>
+            </Navbar>
+
+
+        )
+    }
+
+
 }
 
-export default NavbarComponent;
+export default translate(NavbarComponent)

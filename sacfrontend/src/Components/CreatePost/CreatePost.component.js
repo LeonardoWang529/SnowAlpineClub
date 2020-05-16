@@ -5,6 +5,23 @@ import SubHeaderComponent from '../SubHeader.component';
 import ImageDisplay from './ImageDisplay.component';
 import PostComponent from '../Shop/Post.component';
 import AuthService from '../auth/authService';
+import {
+  setTranslations,
+  setDefaultLanguage,
+  setLanguageCookie,
+  setLanguage,
+  translate,
+} from 'react-switch-lang';
+import en from '../../en.json';
+import ch from '../../ch.json';
+
+// Do this two lines only when setting up the application
+setTranslations({ en, ch });
+setDefaultLanguage('en');
+
+// If you want to remember selected language
+setLanguageCookie();
+
 
 class CreatePostComponent extends React.Component {
   state = {
@@ -26,6 +43,18 @@ class CreatePostComponent extends React.Component {
       this.props.history.push('/login');
     }
   }
+
+  componentDidMount(){
+    //this.props.location.state.categ
+
+    if (localStorage && localStorage.getItem('lang')) {
+      let c = localStorage.getItem('lang');
+      if(c!=="") {
+        setLanguage(c);
+      }
+    }
+  }
+
   handleChange = (e) => {
     //console.log(e.target.value);
     const { name, value } = e.target;
@@ -89,19 +118,20 @@ class CreatePostComponent extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
       <div>
         <SubHeaderComponent />
         <div className={'container'}>
-          <h1 className='my-4'>Create My Post</h1>
+          <h1 className='my-4'>{t('create.cMyPost')}</h1>
           <div className='row'>
             <div className={'container'}>
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId='formTitle'>
-                  <Form.Label>Title</Form.Label>
+                  <Form.Label>{t('create.Title')}</Form.Label>
                   <Form.Control
                     type='text'
-                    placeholder='Enter title'
+                    placeholder={t('create.Entertitle')}
                     name={'postTitle'}
                     value={this.state.postTitle}
                     onChange={this.handleChange}
@@ -116,7 +146,7 @@ class CreatePostComponent extends React.Component {
                   <div key={`inline-${type}`} className='mb-3'>
                     <Form.Check
                       inline
-                      label='Buy'
+                      label={t('create.buy')}
                       type={type}
                       id={`inline-${type}-1`}
                       name={'saleBuyFlag'}
@@ -126,7 +156,7 @@ class CreatePostComponent extends React.Component {
                     />
                     <Form.Check
                       inline
-                      label='Sell'
+                      label={t('create.sale')}
                       type={type}
                       id={`inline-${type}-2`}
                       name={'saleBuyFlag'}
@@ -139,10 +169,10 @@ class CreatePostComponent extends React.Component {
 
                 <Form.Row>
                   <Form.Group as={Col} controlId='formPrice'>
-                    <Form.Label>Price</Form.Label>
+                    <Form.Label>{t('create.price')}</Form.Label>
                     <Form.Control
                       type='text'
-                      placeholder='Enter price'
+                      placeholder={t('create.Enterprice')}
                       name={'price'}
                       value={this.state.price}
                       onChange={this.handleChange}
@@ -153,10 +183,10 @@ class CreatePostComponent extends React.Component {
                   </Form.Group>
 
                   <Form.Group as={Col} controlId='formTag'>
-                    <Form.Label>Tag</Form.Label>
+                    <Form.Label>{t('create.Tag')}</Form.Label>
                     <Form.Control
                       type='text'
-                      placeholder='Enter Tag'
+                      placeholder={t('create.EnterTag')}
                       name={'postTag'}
                       value={this.state.postTag}
                       onChange={this.handleChange}
@@ -167,7 +197,7 @@ class CreatePostComponent extends React.Component {
                   </Form.Group>
 
                   <Form.Group controlId='formCate'>
-                    <Form.Label>Category</Form.Label>
+                    <Form.Label>{t('create.Category')}</Form.Label>
                     <Form.Control
                       as='select'
                       type={'text'}
@@ -182,12 +212,12 @@ class CreatePostComponent extends React.Component {
                 </Form.Row>
 
                 <Form.Group controlId='formDescription'>
-                  <Form.Label>Description</Form.Label>
+                  <Form.Label>{t('create.Description')}</Form.Label>
                   <Form.Control
                     as='textarea'
                     rows='10'
                     type='text'
-                    placeholder='Enter Description'
+                    placeholder={t('create.EnterDescription')}
                     name='postContent'
                     value={this.state.postContent}
                     onChange={this.handleChange}
@@ -196,7 +226,7 @@ class CreatePostComponent extends React.Component {
 
                 <Form.File
                   id='custom-file'
-                  label='Custom file input'
+                  label={t('create.imageupload')}
                   accept='image/*'
                   onChange={this.onAddImage}
                   style={{ marginBottom: 10 }}
@@ -217,7 +247,7 @@ class CreatePostComponent extends React.Component {
                   className={'postSubmit'}
                   variant='primary'
                   type='submit'>
-                  Just Gonna Send It
+                  {t('create.send')}
                 </Button>
               </Form>
             </div>
@@ -228,4 +258,4 @@ class CreatePostComponent extends React.Component {
   }
 }
 
-export default CreatePostComponent;
+export default translate(CreatePostComponent);

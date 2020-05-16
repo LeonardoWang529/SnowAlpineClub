@@ -20,7 +20,6 @@ class CommentListComponent extends React.Component{
 
 
     render() {
-        console.log(this.props.post.postId)
         return (
             <div>
                 <div className={"container"}>

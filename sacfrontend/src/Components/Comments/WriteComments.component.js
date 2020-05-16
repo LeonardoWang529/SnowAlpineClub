@@ -1,5 +1,5 @@
 import React from "react";
-import {Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import Axios from "axios";
 
 class WriteCommentsComponent extends React.Component{
@@ -46,7 +46,9 @@ class WriteCommentsComponent extends React.Component{
                     />
                 </Form.Group>
 
-                <button type={"submit"}>Just Gonna Send It</button>
+                <Button className={'postSubmit'} variant="primary" type="submit">
+                    Just Gonna Send It
+                </Button>
             </Form>
         </div>
     }

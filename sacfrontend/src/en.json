@@ -1,0 +1,39 @@
+{
+  "title": "SnowAlpineCompany",
+  "nav": {
+    "shop": "Shop",
+    "CreatePost": "CreatePost",
+    "Action": "Chinese",
+    "Another": "English",
+    "Search": "Search",
+    "Dropdown": "Language"
+  },
+
+  "foot": {
+    "back": "Back to top",
+    "Thank": "Thank you very much to visit our website!",
+    "Connect": "You can Connect with through Email",
+    "visit": "or visit our Store in San Fransisco."
+  },
+
+  "side": {
+    "Categories": "Categories"
+  },
+
+  "create": {
+    "cMyPost": "Create My Post",
+    "Title": "Title",
+    "buy": "Buy",
+    "sale": "Sale",
+    "price": "Price",
+    "Tag": "Tag",
+    "Category": "Category",
+    "Description": "Description",
+    "send": "Just Gonna Send It",
+    "Entertitle": "Enter title",
+    "Enterprice": "Enter price",
+    "EnterTag": "Enter Tag",
+    "EnterDescription": "Enter Description",
+    "imageupload": "image upload"
+  }
+}

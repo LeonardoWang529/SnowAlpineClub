@@ -8,7 +8,22 @@ import SubHeaderComponent from "../SubHeader.component";
 import CommentListComponent from "../Comments/CommentList.component";
 
 class SinglePostComponent extends React.Component{
+    state = {
+        categ: "all"
+    }
 
+    handleCatMove =(c) => {
+        localStorage.setItem('cate', c);
+        this.props.history.replace("/Shop")
+
+
+        /*this.props.history.push({
+            pathname:"/Shop",
+            state:{
+                categ:c
+            }
+        });*/
+    }
 
 
     render() {
@@ -39,7 +54,7 @@ class SinglePostComponent extends React.Component{
                 </div>
 
                 <div className="col-lg-3 col-12 md-mt-40 sm-mt-40">
-                    <SiderbarComponent />
+                    <SiderbarComponent cate={this.state.categ} handler={this.handleCatMove}/>
                 </div>
             </div>
                 </div>
