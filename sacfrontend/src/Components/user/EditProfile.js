@@ -52,7 +52,7 @@ class EditProfile extends Component {
     const newUserData = this.state.user;
 
     axios
-      .post('http://localhost:5000/users/profile', newUserData)
+      .post('https://snow-alpine.com/users/profile', newUserData)
       .then((res) => {
         console.log(res.data);
         // Save to localStorage

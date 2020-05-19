@@ -40,7 +40,7 @@ class ChangePassword extends Component {
     //console.log(this.state);
 
     axios
-      .post('http://localhost:5000/users/changepassword', newUserData)
+      .post('https//snow-alpine.com/users/changepassword', newUserData)
       .catch((err) =>
         this.setState(
           {

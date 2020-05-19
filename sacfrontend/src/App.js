@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@popperjs/core';
 import './App.css';
 
+
 import NavbarComponent from './Components/Navbar.component';
 import ShopComponent from './Components/Shop/Shop.Component';
 import FooterComponent from './Components/Footer.component';
@@ -24,7 +25,8 @@ function App() {
     <Router>
       <div>
         <NavbarComponent />
-        <Route path={'/'} exact component={LandingComponent} />
+        <Route path={'/'} exact component={LandingComponent}/>
+        <Route path={'/SnowAlpineClub'} exact component={LandingComponent}/>
         <Route path={'/Shop'} exact component={ShopComponent} />
         <Route path={'/SinglePost'} exact component={SinglePostComponent} />
         <Route path={'/CreatePost'} exact component={CreatePostComponent} />

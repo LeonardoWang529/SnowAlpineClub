@@ -32,12 +32,12 @@ class NavbarComponent extends React.Component{
         const { t } = this.props;
         return(
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="/">{t('title')}</Navbar.Brand>
+                <Navbar.Brand href="/SnowAlpineClub">{t('title')}</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link className="nav-item nav-link" to="Shop">{t('nav.shop')}</Link>
-                        <Link className="nav-item nav-link" to="CreatePost">{t('nav.CreatePost')}</Link>
+                        <Link className="nav-item nav-link" to="/Shop">{t('nav.shop')}</Link>
+                        <Link className="nav-item nav-link" to="/CreatePost">{t('nav.CreatePost')}</Link>
                         <NavDropdown title={t('nav.Dropdown')} id="basic-nav-dropdown">
                             <NavDropdown.Item onClick={this.handleSetLanguage('ch')}>{t('nav.Action')}</NavDropdown.Item>
                             <NavDropdown.Item onClick={this.handleSetLanguage('en')}>{t('nav.Another')}</NavDropdown.Item>
@@ -58,7 +58,7 @@ class NavbarComponent extends React.Component{
                     </form>
 
                     <div className='nav-item'>
-                        <Link className='nav-item nav-link' to='/account/summary'>
+                        <Link className='nav-item nav-link' to='./account/summary'>
                             <button className={'loginbutton'}>
                                 <img src={loginImg} alt='login image' />
                             </button>

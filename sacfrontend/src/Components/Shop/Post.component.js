@@ -8,9 +8,9 @@ class PostComponent extends React.Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/postimages/'+this.props.post.postImageId)
+        axios.get('https://snow-alpine.com/postimages/'+this.props.post.postImageId)
             .then(res => {
-                axios.get("http://localhost:5000/uploadPostImage/image/" + res.data.postImage1,
+                axios.get("https://snow-alpine.com/uploadPostImage/image/" + res.data.postImage1,
                     { responseType: 'arraybuffer' },)
                     .then(response => {
                         const base64 = btoa(

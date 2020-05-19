@@ -10,7 +10,7 @@ class CommentListComponent extends React.Component{
 
     componentDidMount =()=> {
 
-        Axios.get('http://localhost:5000/comments/' + this.props.post._id)
+        Axios.get('https://snow-alpine.com/comments/' + this.props.post._id)
             .then(res => {
                 this.setState({comments : res.data})
             }).then(err =>{

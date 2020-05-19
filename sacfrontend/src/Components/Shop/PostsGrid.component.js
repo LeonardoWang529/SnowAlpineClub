@@ -8,7 +8,7 @@ class PostsGridComponent extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/posts/')
+        axios.get('https://snow-alpine.com/posts/')
             .then(res => {
                 this.setState({
                     posts: this.state.posts.concat(res.data)

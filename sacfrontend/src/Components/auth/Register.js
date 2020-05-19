@@ -40,7 +40,7 @@ class Register extends Component {
     };
 
     axios
-      .post('http://localhost:5000/users/register', newUser)
+      .post('https://snow-alpine.com/users/register', newUser)
       .then((res) => this.props.history.push('/login')) // re-direct to login on successful register
       .catch((err) =>
         // this.state.errors = err.response.data;

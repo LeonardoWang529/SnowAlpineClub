@@ -17,7 +17,7 @@ class WriteCommentsComponent extends React.Component{
             commentContent: this.state.commentText
         }
 
-        Axios.post('http://localhost:5000/comments/create', comment)
+        Axios.post('https://snow-alpine.com/comments/create', comment)
             .then(res => {
 
             })

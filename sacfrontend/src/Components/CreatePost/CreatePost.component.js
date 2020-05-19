@@ -78,7 +78,7 @@ class CreatePostComponent extends React.Component {
     formData.append('image', this.state.imageList[0]);
 
     axios
-      .post('http://localhost:5000/uploadPostImage/upload', formData, {
+      .post(process.env.server_url+'/uploadPostImage/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -100,7 +100,7 @@ class CreatePostComponent extends React.Component {
 
           //post post to server
           axios
-            .post('http://localhost:5000/posts/add', newPost)
+            .post('https://snow-alpine.com/posts/add', newPost)
             .then((res) => {
               console.log('success' + res.data);
               this.props.history.replace('/Shop');
